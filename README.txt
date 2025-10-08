@@ -13,8 +13,7 @@ Melhoria implementada:
 
 Como testar:
 1) Extraia os arquivos e abra 'index.html' em um navegador (arraste o arquivo para o navegador ou abra via servidor local).
-2) O componente busca 'aulas.json' via fetch. Se abrir o arquivo local diretamente (file://) alguns navegadores podem bloquear fetch; nesse caso execute um servidor simples:
-   - Python 3: `python -m http.server 8000` dentro da pasta do projeto e acesse http://localhost:8000
+2) O componente busca 'aulas.json' via fetch. Se abrir o arquivo local diretamente (file://) alguns navegadores podem bloquear fetch.
 3) Para mudar o "hoje", edite a variável `this.hoje = "ter";` em 'script_componente.js' para outro dia curto (e.g. 'seg', 'qua') e atualize.
 
 Observação:
