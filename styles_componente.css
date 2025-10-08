@@ -1,0 +1,137 @@
+:root {
+  --frequencia: #126ae2;
+  --nota: #126ae2;
+  --prova: #126ae2;
+
+  /* extras visuais */
+  --card-bg: #ffffff;
+  --surface: #eef3f6;
+  --muted: #6b7280;
+  --shadow-color: rgba(14,30,37,0.12);
+}
+
+/* wrapper / cartões (serão aplicados dentro do shadow DOM) */
+.wrapper {
+  display:block;
+  padding: 4px 0;
+}
+
+/* cartão genérico */
+.comp-aula {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 12px var(--shadow-color);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* título e textos */
+.titulo_aula {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* chips / labels */
+.lables {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lable-prova,
+.lable-frequencia,
+.lable-nota {
+  background-color: var(--prova); /* padrão usa --prova */
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  border-radius: 500px;
+  text-align: center;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+}
+
+.lable-frequencia {
+  background-color: var(--frequencia);
+}
+
+.lable-nota {
+  background-color: var(--nota);
+}
+
+/* classe utilitária aplicada quando a prova aparece no topo do card */
+.lable-prova.lable-prova-top {
+  display:block;
+  margin-bottom:10px;
+  width: fit-content;
+}
+
+/* texto dentro das labels */
+.p_lable {
+  font-size: 13px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* banner de evento (caso use) */
+.evento .banner {
+  width:100%;
+  border-radius: 10px;
+  overflow:hidden;
+  margin-bottom:12px;
+  height:160px;
+  background: linear-gradient(90deg,#ddd,#bbb);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.evento .banner img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* event info */
+.event-info {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* === classes para cor dinâmica da nota (opcional) ===
+   Se preferir que o JS aplique classes em vez de style inline, pode usar:
+     .nota-vermelha { --nota: #e74c3c; }
+     .nota-laranja  { --nota: #f39c12; }
+     .nota-verde    { --nota: #2ecc71; }
+   Essas classes sobrescrevem a variável --nota e mudam o .lable-nota.
+*/
+.nota-vermelha { --nota: #e74c3c; } /* vermelho */
+.nota-laranja  { --nota: #f39c12; } /* laranja */
+.nota-verde    { --nota: #2ecc71; } /* verde */
+
+/* pequenas melhorias responsivas */
+@media (max-width:420px) {
+  .comp-aula { padding:12px; }
+}

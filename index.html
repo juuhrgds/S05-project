@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Componente Aulas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* estilos do host (fora do shadow DOM) apenas para posicionar o painel */
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+        background:#3f3f3f;
+        display:flex;
+        justify-content:center;
+        padding:28px 12px;
+      }
+      .host {
+        width:380px;
+        max-width:95vw;
+        background:#eef3f6;
+        border-radius:6px;
+        padding:12px;
+        box-shadow:0 18px 40px rgba(0,0,0,0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="host">
+      <!-- componente custom element -->
+      <div class="phone" role="main" aria-label="Home mobile mock">
+        <header class="appbar" aria-hidden="false">
+          <div class="icon-btn" title="menu">
+            <!-- ícone hamburger simples -->
+            <svg width="22" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="2" rx="1" fill="var(--prova)"></rect>
+              <rect x="2" y="11" width="20" height="2" rx="1" fill="var(--prova)"></rect>
+              <rect x="2" y="18" width="20" height="2" rx="1" fill="var(--prova)"></rect>
+            </svg>
+          </div>
+
+          <div class="logo">Inatel</div>
+
+          <div class="icon-btn" title="perfil">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.6" stroke="var(--prova)" stroke-width="1.6" fill="none"></circle>
+              <path d="M4 20c0-3.6 4-6.6 8-6.6s8 3 8 6.6" stroke="var(--prova)" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+            </svg>
+          </div>
+        </header>
+
+        <main>
+          <!-- greeting card -->
+          <section class="card comp-aula greeting" aria-labelledby="hello">
+            <h2 id="hello" class="titulo_aula">Olá Raphael!</h2>
+            <p class="p">🔔 Você possui um armário reservado com entrega para hoje...</p>
+            <p class="p">✉️ Você possui uma pendência no financeiro...</p>
+          </section>
+        </main>
+        <aulas-component id="componente"></aulas-component>
+        
+        <!-- Evento card com imagem/banner -->
+          <section class="card comp-aula evento" aria-label="evento">
+            <div class="banner">
+              <!-- substitua por uma imagem local se preferir -->
+              <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f7c0a1a9f0a5a5c2cb3b0c6a6b3d1ed" alt="Festa dos Alunos">
+            </div>
+
+            <h3 class="titulo_aula" style="text-align:center;margin-top:8px">Festa dos Alunos 2025</h3>
+            <p class="p" style="text-align:center;margin-bottom:12px">Venha comemorar a melhor Festa dos Alunos de todos os tempos!</p>
+
+            <div class="event-info">
+              <span class="p"><strong>📅</strong> 18/05 às 19:00</span>
+              <span class="p"><strong>📍</strong> Área Esportiva</span>
+            </div>
+          </section>
+      </div>
+    </div>
+
+    <script id="aulas-json" type="application/json">
+      [
+        {
+          "id": 1,
+          "disciplina": "S05 - Interface Homem-máquina",
+          "data": "ter",
+          "horario": "10:00",
+          "local": "P1-S17",
+          "prova_alert": false,
+          "prova": "12/05",
+          "frequencia": "10/25",
+          "nota": "9"
+        },
+        {
+          "id": 2,
+          "disciplina": "E01 - Circuitos Elétricos em Corrente Contínua",
+          "data": "ter",
+          "horario": "10:00",
+          "local": "P1-S17",
+          "prova_alert": true,
+          "prova": "12/05",
+          "frequencia": "10/25",
+          "nota": "5"
+        },
+        {
+          "id": 3,
+          "disciplina": "M02 - Álgebra e Geometria Analítica",
+          "data": "ter",
+          "horario": "10:00",
+          "local": "P1-S17",
+          "prova_alert": true,
+          "prova": "12/05",
+          "frequencia": "10/25",
+          "nota": "7"
+        }
+      ]
+    </script>
+    <script src="script_componente.js"></script>
+  </body>
+</html>
